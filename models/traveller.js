@@ -40,11 +40,15 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 Traveller.prototype.getUniqueModesOfTransport = function () {
 
   let journeysArray = this.journeys;
-  return journeysArray.map((journey) => {
+  let transportMethods;
+  transportMethods = journeysArray.map((journey) => {
       return journey.transport
-  }).filter((banana, index, self)=>{
+  })
+  let filteredTransport;
+  filteredTransport = transportMethods.filter((banana, index, self)=>{
     return self.indexOf(banana) === index;
   });
+  return filteredTransport;
 };
 //   let distinctTransport;
 //   return distinctTransport = [...new Set(journeysArray.map((journey) => {
